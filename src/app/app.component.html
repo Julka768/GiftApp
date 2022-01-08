@@ -1,0 +1,10 @@
+<div>
+  <span>{{ title }} app is running!</span>
+
+  <app-item-data
+    (eventemitterItemData)="onItemDataAdded($event)"
+  ></app-item-data>
+  <div class="container">
+    <app-item-data-list [itemDataList]="itemList"></app-item-data-list>
+  </div>
+</div>
