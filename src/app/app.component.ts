@@ -20,4 +20,8 @@ export class AppComponent {
   onItemDataAdded(event: ItemData) {
     this.itemList.push(event);
   }
+  onItemDataDeleted(item: ItemData) {
+    let index = this.itemList.indexOf(item);
+    this.itemList.splice(index, 1);
+  }
 }

@@ -52,3 +52,16 @@
 
 .item-price {
 }
+
+.btn-delete {
+  margin-top: 41%;
+}
+
+.btn-delete i {
+  color: black;
+}
+
+.btn-delete:hover,
+.btn-delete i:hover {
+  cursor: pointer;
+}
