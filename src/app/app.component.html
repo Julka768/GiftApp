@@ -5,6 +5,9 @@
     (eventemitterItemData)="onItemDataAdded($event)"
   ></app-item-data>
   <div class="container">
-    <app-item-data-list [itemDataList]="itemList"></app-item-data-list>
+    <app-item-data-list
+      [itemDataList]="itemList"
+      (eventemitterRemoveItem)="onItemDataDeleted($event)"
+    ></app-item-data-list>
   </div>
 </div>

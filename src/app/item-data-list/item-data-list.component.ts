@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ItemData } from '../models/item-data';
 
 @Component({
@@ -8,7 +8,12 @@ import { ItemData } from '../models/item-data';
 })
 export class ItemDataListComponent implements OnInit {
   @Input() itemDataList: ItemData[] = [];
+  @Output() eventemitterRemoveItem = new EventEmitter<ItemData>();
   constructor() {}
 
   ngOnInit() {}
+
+  remove(item: ItemData): void {
+    this.eventemitterRemoveItem.emit(item);
+  }
 }
