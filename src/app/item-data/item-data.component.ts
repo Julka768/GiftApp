@@ -14,29 +14,37 @@ import { MyFormGroup } from '../shared/extensions/my-form-group';
   styleUrls: ['./item-data.component.scss'],
 })
 export class ItemDataComponent implements OnInit {
-  itemData!: ItemData;
   itemForm!: MyFormGroup;
 
   @Output() eventemitterItemData = new EventEmitter<ItemData>();
 
-  constructor(private fbBuilder: FormBuilder) {}
+  constructor() {}
 
   ngOnInit() {
-    this.itemData = { name: 'Julia', link: 'Czerwińska', price: 20 };
-    this.itemData = new ItemData('Ola', 'Czerwinska', 29);
-
     this.itemForm = new MyFormGroup({
       name: new FormControl('', [
         Validators.required,
         Validators.minLength(3),
         Validators.maxLength(20),
+        // Validators.pattern('[A-Z]{1,2}[0-9][0-9A-Z]?\\s?[0-9][A-Z]{2}'),
         Validators.pattern('^[a-zA-Z0-9]*[a-zA-Z]+[a-zA-Z0-9]*$'), //TODO: change for most use cases working
       ]),
       link: new FormControl('', [
         Validators.required,
         Validators.minLength(3),
-        Validators.maxLength(80),
-        Validators.pattern('^[a-zA-Z0-9]*[a-zA-Z]+[a-zA-Z0-9]*$'),
+        Validators.maxLength(400),
+        // Validators.pattern(
+        //   '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?'
+        // ),
+      ]),
+
+      linkPhoto: new FormControl('', [
+        Validators.required,
+        Validators.minLength(3),
+        Validators.maxLength(400),
+        // Validators.pattern(
+        //   '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?'
+        // ),
       ]),
       price: new FormControl(null, [Validators.required, Validators.min(5)]),
     });
