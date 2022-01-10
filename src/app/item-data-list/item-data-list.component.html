@@ -1,9 +1,35 @@
-<div class="container">
+<!-- <div class="container-list">
   <div class="list-of-item">
     <ul>
       <li *ngFor="let item of itemDataList">
-        {{ item.name + " " + item.link + " " + item.price }}
+        <div class="list">
+          <div class="con-item-img">
+            <img [src]="item.linkPhoto" class="item-image" />
+          </div>
+          <span class="item-name">{{ item.name }}</span>
+          <span class="item-link">{{ item.link }}</span>
+          <span class="item-price">{{ item.price }}</span>
+        </div>
       </li>
     </ul>
   </div>
+</div> -->
+
+<div class="container-list">
+  <!-- <div class="list-of-item"> -->
+  <div *ngFor="let item of itemDataList">
+    <div class="list">
+      <div class="con-item-img">
+        <img [src]="item.linkPhoto" class="item-image" />
+      </div>
+      <div class="list-data">
+        <span class="item-name">{{ item.name }}</span>
+        <a href="{{ item.link }}" target="_blank" class="item-link">{{
+          item.link
+        }}</a>
+        <span class="item-price">{{ item.price }}zł</span>
+      </div>
+    </div>
+  </div>
+  <!-- </div> -->
 </div>

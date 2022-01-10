@@ -33,6 +33,7 @@
         class="in-item-data"
         type="text"
         formControlName="link"
+        placeholder="Podaj link do produktu"
       />
     </div>
     <div class="notice">
@@ -51,6 +52,32 @@
     </div>
 
     <div class="container-2">
+        <label for="link-photo">Link do zdjęcia:</label>
+
+      <input
+        id="link-photo"
+        class="in-item-data"
+        type="text"
+        formControlName="linkPhoto"
+        placeholder="Podaj link do zdjęcia produktu"
+      />
+    </div>
+    <div class="notice">
+      <small class="red" *ngIf="itemForm.checkIsRequired('linkPhoto')">
+        LLink is required.
+      </small>
+      <small class="red" *ngIf="itemForm.checkIsMinLength('linkPhoto')">
+        Min length is 3 characters.
+      </small>
+      <small class="red" *ngIf="itemForm.checkIsMaxLength('linkPhoto')">
+        Min length is 80 characters.
+      </small>
+      <small class="red" *ngIf="itemForm.checkIsValidPattern('linkPhoto')">
+        Wrong characters.
+      </small>
+    </div>
+
+    <div class="container-2">
         <label for="price">Cena:</label>
 
       <input
@@ -58,6 +85,7 @@
         class="in-item-data small-p"
         type="number"
         formControlName="price"
+        placeholder="Podaj cenę produktu"
       />
       <label for="price-zl">zł</label>
     </div>

@@ -8,13 +8,14 @@ import { ItemData } from './models/item-data';
 })
 export class AppComponent {
   title: string = 'Learning';
-  kamila: ItemData = new ItemData('Kamila', 'Krxywdinska', 28);
+  kamila: ItemData = new ItemData(
+    'Nazwa przedmiotu',
+    'Link do przedmiotu',
+    28,
+    'https://swiat-obrazkow.pl/obrazy/4/300/pokemon_obrazki_pokemonow_pokemony_469.jpg'
+  );
 
-  itemList: ItemData[] = [
-    new ItemData('Ola', 'Czerwinska', 29),
-    new ItemData('Julia', 'Czerwinska', 21),
-    this.kamila,
-  ];
+  itemList: ItemData[] = [this.kamila];
 
   onItemDataAdded(event: ItemData) {
     this.itemList.push(event);
