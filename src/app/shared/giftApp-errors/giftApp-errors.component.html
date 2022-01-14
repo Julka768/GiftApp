@@ -1,0 +1,20 @@
+<div
+  class="notice"
+  *ngIf="control?.invalid && (control?.dirty || control?.touched)"
+>
+  <small class="red" *ngIf="control?.hasError('required')">
+    Name is required.
+  </small>
+  <small class="red" *ngIf="control?.hasError('minlength')">
+    Min length is 3 characters.
+  </small>
+  <small class="red" *ngIf="control?.hasError('maxlength')">
+    Max length is 20 characters.
+  </small>
+  <small class="red" *ngIf="control?.hasError('validpattern')">
+    Wrong characters.
+  </small>
+  <small class="red" *ngIf="control?.hasError('min')">
+    The lowest price is 5zł.
+  </small>
+</div>

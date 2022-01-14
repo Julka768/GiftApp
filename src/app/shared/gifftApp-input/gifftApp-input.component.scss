@@ -1,0 +1,27 @@
+.container-2 {
+  //   margin: 0 0 0 10%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+label {
+  margin-top: 2%;
+  padding: 0.5em;
+  width: 6%;
+}
+
+.in-item-data {
+  display: block;
+  width: 80%;
+  margin-top: 2%;
+  padding: 0.5em;
+  background-color: white;
+  border: 1px solid rgb(228, 219, 219);
+  border-radius: 4px;
+}
+
+.small-p {
+  width: 20%;
+  margin: 2% 0 0;
+}
