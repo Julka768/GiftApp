@@ -1,103 +1,36 @@
 <div class="list-item-data">
   <form [formGroup]="itemForm" (ngSubmit)="onSubmit()">
-    <div class="container-2">
-        <label for="Name">Nazwa:</label>
-      <input
-        id="name"
-        class="in-item-data"
-        type="text"
-        formControlName="name"
-        placeholder="Podaj nazwe produktu"
-      />
-    </div>
-    <div class="notice">
-      <small class="red" *ngIf="itemForm.checkIsRequired('name')">
-        Name is required.
-      </small>
-      <small class="red" *ngIf="itemForm.checkIsMinLength('name')">
-        Min length is 3 characters.
-      </small>
-      <small class="red" *ngIf="itemForm.checkIsMaxLength('name')">
-        Max length is 20 characters.
-      </small>
-      <small class="red" *ngIf="itemForm.checkIsValidPattern('name')">
-        Wrong characters.
-      </small>
-    </div>
+    <gifftApp-input
+      [formGroup]="itemForm"
+      [control]="itemForm.get('name')!"
+      [id]="'name'"
+      [placeholder]="'Podaj nazwe produktu'"
+      [label]="'Name:'"
+    ></gifftApp-input>
 
-    <div class="container-2">
-        <label for="Link">Link:</label>
+    <gifftApp-input
+      [formGroup]="itemForm"
+      [control]="itemForm.get('link')!"
+      [id]="'link'"
+      [placeholder]="'Podaj link do produktu'"
+      [label]="'Link:'"
+    ></gifftApp-input>
 
-      <input
-        id="Link"
-        class="in-item-data"
-        type="text"
-        formControlName="link"
-        placeholder="Podaj link do produktu"
-      />
-    </div>
-    <div class="notice">
-      <small class="red" *ngIf="itemForm.checkIsRequired('link')">
-        LLink is required.
-      </small>
-      <small class="red" *ngIf="itemForm.checkIsMinLength('link')">
-        Min length is 3 characters.
-      </small>
-      <small class="red" *ngIf="itemForm.checkIsMaxLength('link')">
-        Min length is 80 characters.
-      </small>
-      <small class="red" *ngIf="itemForm.checkIsValidPattern('link')">
-        Wrong characters.
-      </small>
-    </div>
+    <gifftApp-input
+      [formGroup]="itemForm"
+      [control]="itemForm.get('linkPhoto')!"
+      [id]="'linkPhoto'"
+      [placeholder]="'Podaj link do zdjęcia produktu'"
+      [label]="'Link Photo:'"
+    ></gifftApp-input>
 
-    <div class="container-2">
-        <label for="link-photo">Link do zdjęcia:</label>
-
-      <input
-        id="link-photo"
-        class="in-item-data"
-        type="text"
-        formControlName="linkPhoto"
-        placeholder="Podaj link do zdjęcia produktu"
-      />
-    </div>
-    <div class="notice">
-      <small class="red" *ngIf="itemForm.checkIsRequired('linkPhoto')">
-        LLink is required.
-      </small>
-      <small class="red" *ngIf="itemForm.checkIsMinLength('linkPhoto')">
-        Min length is 3 characters.
-      </small>
-      <small class="red" *ngIf="itemForm.checkIsMaxLength('linkPhoto')">
-        Min length is 80 characters.
-      </small>
-      <small class="red" *ngIf="itemForm.checkIsValidPattern('linkPhoto')">
-        Wrong characters.
-      </small>
-    </div>
-
-    <div class="container-2">
-        <label for="price">Cena:</label>
-
-      <input
-        id="price price-zl"
-        class="in-item-data small-p"
-        type="number"
-        formControlName="price"
-        placeholder="Podaj cenę produktu"
-      />
-      <label for="price-zl">zł</label>
-    </div>
-    <div class="notice">
-      <small class="red" *ngIf="itemForm.checkIsRequired('price')">
-        Price is required.
-      </small>
-      <small class="red" *ngIf="itemForm.checkIsMin('price')">
-        The lowest price is 5zł.
-      </small>
-    </div>
-
+    <gifftApp-input
+      [formGroup]="itemForm"
+      [control]="itemForm.get('price')!"
+      [id]="'Price'"
+      [placeholder]="'Podaj cenę produktu'"
+      [label]="'Prce:'"
+    ></gifftApp-input>
     <button
       class="btn-add-list-data"
       type="submit"
